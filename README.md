@@ -1,5 +1,7 @@
-# Level Up Base Theme
+# Level Up iFrame Resizer
 
-This theme pairs with the [Level Up Base Theme](https://levelupthemes.com) to
-provide global colors & fonts support for GoHighLevel.
+[Level Up](https://levelupthemes.com)
+
+Resize embedded iframes.
+
 
