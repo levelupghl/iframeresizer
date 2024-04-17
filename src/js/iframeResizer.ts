@@ -5,6 +5,9 @@
 import { iframeResizer } from "iframe-resizer"
 import { debounce } from "./lib/debounce"
 
+// Wait a max of 5 seconds then hide the loading spinner
+const MAX_LOADING_TIME = 5000
+
 export interface CustomWindow extends Window {
   levelup: {
     iframe: any
@@ -17,7 +20,7 @@ interface ScriptElem extends HTMLScriptElement {
     iframeSelector: string
   }
 }
-interface IframeElem extends HTMLElement {
+interface IFrame extends HTMLIFrameElement {
   dataset: {
     resizeInit: string
   }
@@ -34,7 +37,7 @@ const observe = (selector: string) => {
   }
   const observer = new MutationObserver(
     debounce(() => {
-      document.querySelectorAll<IframeElem>(selector).forEach((iframe) => {
+      document.querySelectorAll<IFrame>(selector).forEach((iframe) => {
         if (!iframe.dataset.resizeInit) {
           iframe.dataset.resizeInit = "true"
           resizer({ autoResize: true }, iframe)
@@ -45,7 +48,7 @@ const observe = (selector: string) => {
   observer.observe(document.body, config)
 }
 
-const loading = (iframe: HTMLElement): HTMLElement | void => {
+const loading = (iframe: HTMLElement): HTMLElement => {
   const loaderDiv: HTMLDivElement = document.createElement("div")
   loaderDiv.classList.add("iframeLoading")
   loaderDiv.innerHTML = `<div style="width:24px;margin:20px auto 0"><svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><style>.spinner_ajPY{transform-origin:center;animation:spinner_AtaB .75s infinite linear}@keyframes spinner_AtaB{100%{transform:rotate(360deg)}}</style><path d="M12,1A11,11,0,1,0,23,12,11,11,0,0,0,12,1Zm0,19a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z" opacity=".25"/><path d="M10.14,1.16a11,11,0,0,0-9,8.92A1.59,1.59,0,0,0,2.46,12,1.52,1.52,0,0,0,4.11,10.7a8,8,0,0,1,6.66-6.61A1.42,1.42,0,0,0,12,2.69h0A1.57,1.57,0,0,0,10.14,1.16Z" class="spinner_ajPY"/></svg></div>`
@@ -60,23 +63,30 @@ const doneLoading = (loaderDiv: HTMLElement) => {
   loaderDiv.style.display = "none"
 }
 
-const resizer = (options: any, elem: HTMLElement | string) => {
-  const iframe =
-    typeof elem === "string"
-      ? (document.querySelector(elem) as HTMLElement)
-      : elem
+const showLoading = (options: any, iframe: HTMLIFrameElement) => {
   const loaderDiv = loading(iframe)
-  options.onInit = options.onResized = (el: HTMLElement) => {
+  options.onInit = options.onResized = (el: HTMLIFrameElement) => {
     if (loaderDiv) {
       doneLoading(loaderDiv)
     }
   }
-  // For Embed Notion Pages
-  // TODO: detect embednotionpage.com src url?
-  debugger
-  // bodyOffset' | 'bodyScroll' | 'documentElementOffset' | 'documentElementScroll' |
-  // ;"max" | "min" | "grow" | "lowestElement" | "taggedElement"
-  options.heightCalculationMethod = "taggedElement"
+  setTimeout(() => {
+    doneLoading(loaderDiv)
+  }, MAX_LOADING_TIME)
+}
+
+const resizer = (options: any, elem: HTMLIFrameElement | string) => {
+  const iframe =
+    typeof elem === "string"
+      ? (document.querySelector(elem) as HTMLIFrameElement)
+      : elem
+  // Handle ENP special case
+  // Don't show loading spinner and change height calculation method
+  if (iframe.src.includes("embednotionpage.com")) {
+    options.heightCalculationMethod = "taggedElement"
+  } else {
+    showLoading(options, iframe)
+  }
   iframeResizer(options, iframe)
 }
 
