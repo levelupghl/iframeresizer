@@ -2,7 +2,17 @@
 file.
 
 ####
+[v1.0.3](https://github.com/levelupthemes/iframeresizer/compare/v1.0.2...v1.0.3)
+
+-
+Add support for EmbedNotionPages
+[`a11ea21`](https://github.com/levelupthemes/iframeresizer/commit/a11ea21469b8ca8b33a232cb941cc70d8b4b7772)
+
+####
 [v1.0.2](https://github.com/levelupthemes/iframeresizer/compare/v1.0.1...v1.0.2)
+
+>
+17 April 2024
 
 -
 Fix issue with iframeResizer module not bundling

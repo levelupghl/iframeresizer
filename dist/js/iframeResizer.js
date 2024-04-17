@@ -1,7 +1,7 @@
 /*!***************************************
  * Level Up iFrame Resizer
  * https//levelupthemes.com
- * Version: v1.0.2
+ * Version: v1.0.3
  ****************************************/
 
 (function () {
@@ -2808,6 +2808,7 @@
     };
   }
 
+  const MAX_LOADING_TIME = 5e3;
   const observe = (selector) => {
     const config = {
       attributes: true,
@@ -2843,16 +2844,24 @@
   const doneLoading = (loaderDiv) => {
     loaderDiv.style.display = "none";
   };
-  const resizer = (options, elem) => {
-    const iframe = typeof elem === "string" ? document.querySelector(elem) : elem;
+  const showLoading = (options, iframe) => {
     const loaderDiv = loading(iframe);
     options.onInit = options.onResized = (el) => {
       if (loaderDiv) {
         doneLoading(loaderDiv);
       }
     };
-    debugger;
-    options.heightCalculationMethod = "taggedElement";
+    setTimeout(() => {
+      doneLoading(loaderDiv);
+    }, MAX_LOADING_TIME);
+  };
+  const resizer = (options, elem) => {
+    const iframe = typeof elem === "string" ? document.querySelector(elem) : elem;
+    if (iframe.src.includes("embednotionpage.com")) {
+      options.heightCalculationMethod = "taggedElement";
+    } else {
+      showLoading(options, iframe);
+    }
     iframeResizer.iframeResizer(options, iframe);
   };
   const run = () => {
@@ -2881,7 +2890,7 @@
       });
     }
   };
-  console.log(`Powered by Level Up iFrame Resizer v1.0.2:`, "https://levelupthemes.com");
+  console.log(`Powered by Level Up iFrame Resizer v1.0.3:`, "https://levelupthemes.com");
   init();
 
 })();
