@@ -23,7 +23,7 @@
     "build": "npm run build:js",
     "build:js": "rollup -c",
     "update:versions": "node updateVersions.js",
-    "version": "npm run build && npm run changelog && git add -A CHANGELOG.md dist version src/banner.css"
+    "version": "npm run build && npm run changelog && git add -A CHANGELOG.md dist version src/snippets/banner.css"
   },
   "devDependencies": {
     "@rollup/plugin-replace": "^5.0.5",
