@@ -2,7 +2,20 @@
 file.
 
 ####
-1.0.1
+[v1.0.2](https://github.com/levelupthemes/iframeresizer/compare/v1.0.1...v1.0.2)
+
+-
+Fix issue with iframeResizer module not bundling
+[`a4f1071`](https://github.com/levelupthemes/iframeresizer/commit/a4f107166b5276e8fb65e463908890f5b5386fae)
+-
+Change dev server port
+[`5f5e434`](https://github.com/levelupthemes/iframeresizer/commit/5f5e434142e4d27c0da23dfb7bc54ad427de4d78)
+
+####
+v1.0.1
+
+>
+17 April 2024
 
 -
 Port iframeResizer from levelup repo
