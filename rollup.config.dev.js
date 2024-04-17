@@ -13,7 +13,7 @@ const serveConfig = {
   openPage: "/src/index.html",
   verbose: true,
   host: "localhost",
-  port: 1235,
+  port: 1236,
   https: {
     key: readFileSync(".certs/private.pem"),
     cert: readFileSync(".certs/primary.crt"),
