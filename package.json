@@ -1,0 +1,41 @@
+{
+  "name": "level-up-iframe-resizer",
+  "version": "1.0.0",
+  "description": "Dynamically resize embedded iframes.",
+  "homepage": "https://levelupthemes.com",
+  "author": "joe@levelupthemes.com",
+  "license": "MIT",
+  "type": "module",
+  "keywords": [
+    "gohighlevel",
+    "ghl",
+    "iframe",
+    "iframe resizer"
+  ],
+  "scripts": {
+    "clean": "del-cli dist/version dist/js .dev",
+    "changelog": "auto-changelog -p -t src/snippets/changelog.hbs --commit-limit false --hide-empty-releases --hide-credit",
+    "deploy": "git push && git push --tags",
+    "postdeploy": "node purgeCache.js",
+    "predev": "del-cli .dev",
+    "dev": "rollup --config rollup.config.dev.js --watch --environment OPENPAGE:true",
+    "prebuild": "npm run clean && npm run update:versions",
+    "build": "npm run build:js",
+    "build:js": "rollup -c",
+    "update:versions": "node updateVersions.js",
+    "version": "npm run build && npm run changelog && git add -A CHANGELOG.md dist version src/banner.css"
+  },
+  "devDependencies": {
+    "@rollup/plugin-replace": "^5.0.5",
+    "@types/iframe-resizer": "^3.5.13",
+    "auto-changelog": "^2.4.0",
+    "chalk": "^5.3.0",
+    "del-cli": "^5.1.0",
+    "glob": "^10.3.10",
+    "iframe-resizer": "^4.3.9",
+    "rollup": "^4.12.0",
+    "rollup-plugin-esbuild": "^6.1.1",
+    "rollup-plugin-serve": "^1.1.1",
+    "typescript": "^5.3.3"
+  }
+}
