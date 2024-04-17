@@ -2,18 +2,17 @@
 file.
 
 ####
-[v1.0.2](https://github.com/highlevelthemes/levelup-base/compare/v1.0.1...v1.0.2)
+1.0.1
 
 -
-Add social links
-[`5a5a6a8`](https://github.com/highlevelthemes/levelup-base/commit/5a5a6a8fd0a61e040cc5e8930a8687a647dd15c3)
-
-####
-v1.0.1
-
->
-12 April 2024
-
+Port iframeResizer from levelup repo
+[`5a4030a`](https://github.com/levelupthemes/iframeresizer/commit/5a4030a037516f1ef197909a0f17d8f27c99b21f)
 -
-Init
-[`053e228`](https://github.com/highlevelthemes/levelup-base/commit/053e2281cf591870c1c59419f00d025d816232b4)
+Update purgeCache.js
+[`c5590f6`](https://github.com/levelupthemes/iframeresizer/commit/c5590f6f781c0e786acb3362b3b7f3b40fb8bb4f)
+-
+Update README.md
+[`18758aa`](https://github.com/levelupthemes/iframeresizer/commit/18758aa5552d0366c9da9a81d6c4bae02c4e5205)
+-
+Fix banner location
+[`8bdb298`](https://github.com/levelupthemes/iframeresizer/commit/8bdb298bdc55fdccc33c01d8d694defeab0185e2)
