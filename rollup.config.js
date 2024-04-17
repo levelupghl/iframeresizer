@@ -1,5 +1,7 @@
 import esbuild from "rollup-plugin-esbuild"
 import replace from "@rollup/plugin-replace"
+import { nodeResolve } from "@rollup/plugin-node-resolve"
+import commonjs from "@rollup/plugin-commonjs"
 import { readFileSync } from "node:fs"
 
 const esBuildConfig = {
@@ -17,6 +19,8 @@ const getPlugins = (esOpts = {}) => {
       __theme_website__: "https://levelupthemes.com",
     }),
     esbuild({ ...esBuildConfig, ...esOpts }),
+    nodeResolve(),
+    commonjs(),
   ]
 }
 

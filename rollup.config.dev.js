@@ -1,6 +1,8 @@
 import serve from "rollup-plugin-serve"
 import esbuild from "rollup-plugin-esbuild"
 import replace from "@rollup/plugin-replace"
+import { nodeResolve } from "@rollup/plugin-node-resolve"
+import commonjs from "@rollup/plugin-commonjs"
 import { readFileSync } from "node:fs"
 
 const DEV_DIR = ".dev"
@@ -20,8 +22,6 @@ const serveConfig = {
   },
 }
 
-
-
 export default [
   {
     input: "src/js/iframeResizer.ts",
@@ -34,6 +34,8 @@ export default [
       }),
       esbuild(esBuildConfig),
       serve(serveConfig),
+      nodeResolve(),
+      commonjs(),
     ],
     watch: {
       include: "./src/js/**",

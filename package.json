@@ -26,6 +26,8 @@
     "version": "npm run build && npm run changelog && git add -A CHANGELOG.md dist version src/snippets/banner.css"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-replace": "^5.0.5",
     "@types/iframe-resizer": "^3.5.13",
     "auto-changelog": "^2.4.0",
