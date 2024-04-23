@@ -2,7 +2,23 @@
 file.
 
 ####
+[v1.0.7](https://github.com/leveluptools/iframeresizer/compare/v1.0.6...v1.0.7)
+
+-
+Set defaults to allow inPageLinks
+[`ef2089f`](https://github.com/leveluptools/iframeresizer/commit/ef2089fcb627abe289266fbe1277774fd1b0fe88)
+-
+Update iframe-resizer
+[`05f7458`](https://github.com/leveluptools/iframeresizer/commit/05f7458c64203907a36e74e89b8e9e0dc8dbd25d)
+-
+Fix iframeResizer import
+[`d6a20e9`](https://github.com/leveluptools/iframeresizer/commit/d6a20e917acb1cde682733ab49994dad314d7d9f)
+
+####
 [v1.0.6](https://github.com/leveluptools/iframeresizer/compare/v1.0.5...v1.0.6)
+
+>
+22 April 2024
 
 -
 Add wrapper for event callbacks
