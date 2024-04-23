@@ -82,11 +82,15 @@ const resizer = (options: any, elem: HTMLIFrameElement | string) => {
       : elem
   // Handle ENP special case
   // Don't show loading spinner and change height calculation method
+  if (iframe.src.includes("funnelembed.com")) {
+    iframe.src = iframe.src.replace("funnelembed.com", "embednotionpage.com")
+  }
   if (
     iframe.src.includes("embednotionpage.com") ||
     iframe.src.includes("funnelembed.com")
   ) {
     options.heightCalculationMethod = "taggedElement"
+    // options.log = true
   } else {
     showLoading(options, iframe)
   }
