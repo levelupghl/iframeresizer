@@ -60,19 +60,31 @@ const loading = (iframe: HTMLElement): HTMLElement => {
 }
 
 const doneLoading = (loaderDiv: HTMLElement) => {
-  loaderDiv.style.display = "none"
+  if (loaderDiv?.style) {
+    loaderDiv.style.display = "none"
+  }
+}
+
+function wrap<T extends any[], R>(
+  fn1: (...args: T) => R,
+  fn2: (...args: T) => R
+) {
+  return function (...args: T) {
+    if (fn1) {
+      fn1(...args)
+    }
+    return fn2(...args)
+  }
 }
 
 const showLoading = (options: any, iframe: HTMLIFrameElement) => {
   const loaderDiv = loading(iframe)
-  options.onInit = options.onResized = (el: HTMLIFrameElement) => {
-    if (loaderDiv) {
-      doneLoading(loaderDiv)
-    }
-  }
-  setTimeout(() => {
+  const init = () => {
     doneLoading(loaderDiv)
-  }, MAX_LOADING_TIME)
+  }
+  options.onInit = wrap(options.onInit, init)
+  options.onResized = wrap(options.onResized, init)
+  setTimeout(init, MAX_LOADING_TIME)
 }
 
 const resizer = (options: any, elem: HTMLIFrameElement | string) => {
@@ -83,6 +95,7 @@ const resizer = (options: any, elem: HTMLIFrameElement | string) => {
   // Handle ENP special case
   // Don't show loading spinner and change height calculation method
   if (iframe.src.includes("funnelembed.com")) {
+    // Temporary fix until funnelembed.com iframe headers are set to allow postMessage
     iframe.src = iframe.src.replace("funnelembed.com", "embednotionpage.com")
   }
   if (
@@ -90,11 +103,22 @@ const resizer = (options: any, elem: HTMLIFrameElement | string) => {
     iframe.src.includes("funnelembed.com")
   ) {
     options.heightCalculationMethod = "taggedElement"
+    // options.bodyPadding = "0 0 50px 0"
+    // options.bodyMargin = "0 0 50px 0"
+    // options.bodyBackground = "red"
+    // options.scrolling = false
+    // options.minHeight = 300
     // options.log = true
   } else {
     showLoading(options, iframe)
   }
-  iframeResizer(options, iframe)
+  // options.onResized = wrap(options.onResized, ({iframe, height, width, type}) => {
+  //   // Adjusting height doesn't work since the iframe will continue to grow each time
+  //   // iframe.style.height = `${parseInt(height) + HEIGHT_ADJUST}px`
+  // })
+  setTimeout(() => {
+    iframeResizer(options, iframe)
+  }, 100)
 }
 
 const run = () => {
