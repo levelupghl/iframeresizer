@@ -1,7 +1,7 @@
 /*!***************************************
  * Level Up iFrame Resizer
  * https//levelupthemes.com
- * Version: v1.0.3
+ * Version: v1.0.4
  ****************************************/
 
 (function () {
@@ -2857,7 +2857,7 @@
   };
   const resizer = (options, elem) => {
     const iframe = typeof elem === "string" ? document.querySelector(elem) : elem;
-    if (iframe.src.includes("embednotionpage.com")) {
+    if (iframe.src.includes("embednotionpage.com") || iframe.src.includes("funnelembed.com")) {
       options.heightCalculationMethod = "taggedElement";
     } else {
       showLoading(options, iframe);
@@ -2890,7 +2890,7 @@
       });
     }
   };
-  console.log(`Powered by Level Up iFrame Resizer v1.0.3:`, "https://levelupthemes.com");
+  console.log(`Powered by Level Up iFrame Resizer v1.0.4:`, "https://levelupthemes.com");
   init();
 
 })();

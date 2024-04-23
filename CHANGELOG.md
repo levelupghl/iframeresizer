@@ -2,7 +2,17 @@
 file.
 
 ####
+[v1.0.4](https://github.com/levelupthemes/iframeresizer/compare/v1.0.3...v1.0.4)
+
+-
+Add funnelembed.com support
+[`4bf7c46`](https://github.com/levelupthemes/iframeresizer/commit/4bf7c46c2066a1697a9dc8f5a9530538b9df2f2b)
+
+####
 [v1.0.3](https://github.com/levelupthemes/iframeresizer/compare/v1.0.2...v1.0.3)
+
+>
+17 April 2024
 
 -
 Add support for EmbedNotionPages
