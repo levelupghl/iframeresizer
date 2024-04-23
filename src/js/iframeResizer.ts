@@ -88,6 +88,7 @@ const resizer = (options: any, elem: HTMLIFrameElement | string) => {
     typeof elem === "string"
       ? (document.querySelector(elem) as HTMLIFrameElement)
       : elem
+
   // Handle ENP special case
   // Don't show loading spinner and change height calculation method
   if (iframe.src.includes("funnelembed.com")) {
@@ -98,16 +99,31 @@ const resizer = (options: any, elem: HTMLIFrameElement | string) => {
     iframe.src.includes("embednotionpage.com") ||
     iframe.src.includes("funnelembed.com")
   ) {
+    // Override height calculation method
     options.heightCalculationMethod = "taggedElement"
-    // options.bodyPadding = "0 0 50px 0"
-    // options.bodyMargin = "0 0 50px 0"
-    // options.bodyBackground = "red"
-    // options.scrolling = false
-    // options.minHeight = 300
-    // options.log = true
   } else {
     showLoading(options, iframe)
   }
+
+  //
+  // Set default options
+  //
+
+  // options.bodyPadding = "0 0 50px 0"
+  // options.bodyBackground = "red"
+
+  // Disable scrollbars in the iframe
+  options.scrolling ??= false
+
+  // Enable anchor links in iframe to trigger scrolling
+  options.inPageLinks ??= true
+
+  // Set bodyMargin to fix a bug in iframeResizer.contentWindow.js that
+  // causes the top of the iframe to get cut off if bodyMarin is not set
+  options.bodyMargin ??= "0"
+
+  // options.log ??= true
+
   // options.onResized = wrap(options.onResized, ({iframe, height, width, type}) => {
   //   // Adjusting height doesn't work since the iframe will continue to grow each time
   //   // iframe.style.height = `${parseInt(height) + HEIGHT_ADJUST}px`
