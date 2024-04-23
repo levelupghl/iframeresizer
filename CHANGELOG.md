@@ -2,7 +2,17 @@
 file.
 
 ####
+[v1.0.6](https://github.com/leveluptools/iframeresizer/compare/v1.0.5...v1.0.6)
+
+-
+Add wrapper for event callbacks
+[`f8f0375`](https://github.com/leveluptools/iframeresizer/commit/f8f03753c660b8176fdd16136739371f70a95731)
+
+####
 [v1.0.5](https://github.com/leveluptools/iframeresizer/compare/v1.0.4...v1.0.5)
+
+>
+22 April 2024
 
 -
 Temporary fix for redirect

@@ -1,7 +1,7 @@
 /*!***************************************
  * Level Up iFrame Resizer
  * https//levelupthemes.com
- * Version: v1.0.5
+ * Version: v1.0.6
  ****************************************/
 
 (function () {
@@ -2842,18 +2842,26 @@
     return loaderDiv;
   };
   const doneLoading = (loaderDiv) => {
-    loaderDiv.style.display = "none";
+    if (loaderDiv == null ? void 0 : loaderDiv.style) {
+      loaderDiv.style.display = "none";
+    }
   };
+  function wrap(fn1, fn2) {
+    return function(...args) {
+      if (fn1) {
+        fn1(...args);
+      }
+      return fn2(...args);
+    };
+  }
   const showLoading = (options, iframe) => {
     const loaderDiv = loading(iframe);
-    options.onInit = options.onResized = (el) => {
-      if (loaderDiv) {
-        doneLoading(loaderDiv);
-      }
-    };
-    setTimeout(() => {
+    const init2 = () => {
       doneLoading(loaderDiv);
-    }, MAX_LOADING_TIME);
+    };
+    options.onInit = wrap(options.onInit, init2);
+    options.onResized = wrap(options.onResized, init2);
+    setTimeout(init2, MAX_LOADING_TIME);
   };
   const resizer = (options, elem) => {
     const iframe = typeof elem === "string" ? document.querySelector(elem) : elem;
@@ -2865,7 +2873,9 @@
     } else {
       showLoading(options, iframe);
     }
-    iframeResizer.iframeResizer(options, iframe);
+    setTimeout(() => {
+      iframeResizer.iframeResizer(options, iframe);
+    }, 100);
   };
   const run = () => {
     var _a, _b, _c;
@@ -2893,7 +2903,7 @@
       });
     }
   };
-  console.log(`Powered by Level Up iFrame Resizer v1.0.5:`, "https://levelupthemes.com");
+  console.log(`Powered by Level Up iFrame Resizer v1.0.6:`, "https://levelupthemes.com");
   init();
 
 })();
