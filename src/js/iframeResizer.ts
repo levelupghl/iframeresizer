@@ -1,8 +1,4 @@
-// TODO: figure out how to only include js/iframeResizer in rollup build
-//  Tried excluding *.contentWindow.js but it didn't work
-// import iframeResize from "iframe-resizer/js/iframeResizer"
-
-import { iframeResizer } from "iframe-resizer"
+import iframeResizer from "./lib/iframeResizerLib"
 import { debounce } from "./lib/debounce"
 
 // Wait a max of 5 seconds then hide the loading spinner
