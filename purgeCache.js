@@ -14,7 +14,7 @@ async function getPackageVersion() {
 
 async function showPurgeMessage() {
   const latest = await getPackageVersion()
-  const version = latest.substr(0, 4)
+  const version = latest.substr(0, 2)
 
   const log = (msg) => console.log(chalk.yellow(msg))
 
