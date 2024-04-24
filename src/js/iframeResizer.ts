@@ -100,7 +100,7 @@ const resizer = (options: any, elem: HTMLIFrameElement | string) => {
     iframe.src.includes("funnelembed.com")
   ) {
     // Override height calculation method
-    options.heightCalculationMethod = "taggedElement"
+    options.heightCalculationMethod ??= "taggedElement"
   } else {
     showLoading(options, iframe)
   }
