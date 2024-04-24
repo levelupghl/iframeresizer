@@ -2,7 +2,17 @@
 file.
 
 ####
+[v1.0.8](https://github.com/leveluptools/iframeresizer/compare/v1.0.7...v1.0.8)
+
+-
+Only override heightCalculationMethod if not set
+[`6a225d8`](https://github.com/leveluptools/iframeresizer/commit/6a225d88bccbaa17dd17a82538b10988a088b21d)
+
+####
 [v1.0.7](https://github.com/leveluptools/iframeresizer/compare/v1.0.6...v1.0.7)
+
+>
+23 April 2024
 
 -
 Set defaults to allow inPageLinks
