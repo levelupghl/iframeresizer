@@ -1,7 +1,7 @@
 /*!***************************************
  * Level Up iFrame Resizer
  * https//levelupthemes.com
- * Version: v1.0.8
+ * Version: v1.0.9
  ****************************************/
 
 (function () {
@@ -1603,7 +1603,7 @@
 	    });
 	  }
 	};
-	console.log(`Powered by Level Up iFrame Resizer v1.0.8:`, "https://levelupthemes.com");
+	console.log(`Powered by Level Up iFrame Resizer v1.0.9:`, "https://levelupthemes.com");
 	init();
 
 })();

@@ -2,7 +2,20 @@
 file.
 
 ####
+[v1.0.9](https://github.com/leveluptools/iframeresizer/compare/v1.0.8...v1.0.9)
+
+-
+Add ghlIframeData.ts to rollup
+[`9d8fddd`](https://github.com/leveluptools/iframeresizer/commit/9d8fddd8defb6e89ed3aa5e092cf914ba8e409bb)
+-
+Create ghlIframeData.ts
+[`f08ffa1`](https://github.com/leveluptools/iframeresizer/commit/f08ffa162c8589f36a2bc0de8877b042d449b577)
+
+####
 [v1.0.8](https://github.com/leveluptools/iframeresizer/compare/v1.0.7...v1.0.8)
+
+>
+23 April 2024
 
 -
 Only override heightCalculationMethod if not set
