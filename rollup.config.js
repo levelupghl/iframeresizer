@@ -10,6 +10,17 @@ const esBuildConfig = {
 
 const BANNER = readFileSync("./src/snippets/banner.css", { encoding: "utf8" })
 
+export const FILES_LIST = [
+  {
+    input: "src/js/iframeResizer.ts",
+    output: "dist/js/iframeResizer.js",
+  },
+  {
+    input: "src/js/ghlIframeData.ts",
+    output: "dist/js/ghlIframeData.js",
+  },
+]
+
 const getPlugins = (esOpts = {}) => {
   return [
     replace({
@@ -24,30 +35,36 @@ const getPlugins = (esOpts = {}) => {
   ]
 }
 
-export default [
-  {
-    input: "src/js/iframeResizer.ts",
-    plugins: getPlugins(),
-    output: [
-      {
-        dir: "dist/js",
-        format: "iife",
-        sourcemap: true,
-        banner: BANNER,
-      },
-    ],
-  },
-  {
-    input: "src/js/iframeResizer.ts",
+function buildFiles() {
+  const ret = []
+  FILES_LIST.forEach((file) => {
+    ret.push({
+      input: file.input,
+      plugins: getPlugins(),
+      output: [
+        {
+          file: file.output,
+          format: "iife",
+          sourcemap: true,
+          banner: BANNER,
+        },
+      ],
+    })
     // Minify
-    plugins: getPlugins({ minify: true }),
-    output: [
-      {
-        file: "dist/js/iframeResizer.min.js",
-        format: "iife",
-        sourcemap: true,
-        banner: BANNER,
-      },
-    ],
-  },
-]
+    ret.push({
+      input: file.input,
+      plugins: getPlugins({ minify: true }),
+      output: [
+        {
+          file: file.output.replace(".js", ".min.js"),
+          format: "iife",
+          sourcemap: true,
+          banner: BANNER,
+        },
+      ],
+    })
+  })
+  return ret
+}
+
+export default buildFiles()
