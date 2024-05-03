@@ -29,6 +29,13 @@ async function showPurgeMessage() {
   log(
     `https://cdn.jsdelivr.net/gh/leveluptools/iframeresizer@${version}/dist/js/iframeResizer.min.js`
   )
+  log(
+    `https://cdn.jsdelivr.net/gh/leveluptools/iframeresizer@${version}/dist/js/ghlIframeData.js`
+  )
+  log(
+    `https://cdn.jsdelivr.net/gh/leveluptools/iframeresizer@${version}/dist/js/ghlIframeData.min.js`
+  )
+
 }
 
 showPurgeMessage()
