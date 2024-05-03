@@ -2,7 +2,20 @@
 file.
 
 ####
+[v1.0.10](https://github.com/leveluptools/iframeresizer/compare/v1.0.9...v1.0.10)
+
+-
+Update purgeCache
+[`381442c`](https://github.com/leveluptools/iframeresizer/commit/381442c9605282f418c80368442b7f918ff3add8)
+-
+Add missing notion-embed subdomain
+[`3dc994d`](https://github.com/leveluptools/iframeresizer/commit/3dc994df80e3cd64fecf23a6dc9984768e2bb193)
+
+####
 [v1.0.9](https://github.com/leveluptools/iframeresizer/compare/v1.0.8...v1.0.9)
+
+>
+3 May 2024
 
 -
 Add ghlIframeData.ts to rollup
