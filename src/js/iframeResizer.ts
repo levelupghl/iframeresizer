@@ -111,8 +111,10 @@ const resizer = (options: any, elem: HTMLIFrameElement | string) => {
 
   // options.bodyPadding ??= "0 0 50px 0"
 
-  // Set body background color to white to avoid flash of black when notion page is loading
-  options.bodyBackground ??= "#ffffff !important"
+  // TODO: fix iframeResizer.contentWindow.js to properly set background color and send to Ozan.
+  // iframeResizer sets the background color but then Notion immediately overrides it to black then white.
+  // There's an annoying black flash when the embedded page loads.
+  // options.bodyBackground ??= "white"
 
   // Disable scrollbars in the iframe
   options.scrolling ??= false
