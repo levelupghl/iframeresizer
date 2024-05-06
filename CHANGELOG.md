@@ -2,7 +2,17 @@
 file.
 
 ####
+[v1.0.12](https://github.com/leveluptools/iframeresizer/compare/v1.0.11...v1.0.12)
+
+-
+Try setting body background color with !important
+[`c1e818f`](https://github.com/leveluptools/iframeresizer/commit/c1e818f7f7936b94b482aba3d2f18d40e71c6e2b)
+
+####
 [v1.0.11](https://github.com/leveluptools/iframeresizer/compare/v1.0.10...v1.0.11)
+
+>
+6 May 2024
 
 -
 Set body background to white
