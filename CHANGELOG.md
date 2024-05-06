@@ -2,7 +2,17 @@
 file.
 
 ####
+[v1.0.13](https://github.com/leveluptools/iframeresizer/compare/v1.0.12...v1.0.13)
+
+-
+Disable bodyBackground color
+[`2169919`](https://github.com/leveluptools/iframeresizer/commit/2169919b8bc757844c0a1c6f2e6fa2a09b890d0c)
+
+####
 [v1.0.12](https://github.com/leveluptools/iframeresizer/compare/v1.0.11...v1.0.12)
+
+>
+6 May 2024
 
 -
 Try setting body background color with !important

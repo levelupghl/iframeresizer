@@ -1,7 +1,7 @@
 /*!***************************************
  * Level Up iFrame Resizer
  * https//levelupthemes.com
- * Version: v1.0.12
+ * Version: v1.0.13
  ****************************************/
 
 (function () {
@@ -1560,7 +1560,7 @@
 	  setTimeout(init2, MAX_LOADING_TIME);
 	};
 	const resizer = (options, elem) => {
-	  var _a, _b, _c, _d, _e;
+	  var _a, _b, _c, _d;
 	  const iframe = typeof elem === "string" ? document.querySelector(elem) : elem;
 	  if (iframe.src.includes("funnelembed.com")) {
 	    iframe.src = iframe.src.replace("funnelembed.com", "embednotionpage.com");
@@ -1570,10 +1570,9 @@
 	  } else {
 	    showLoading(options, iframe);
 	  }
-	  (_b = options.bodyBackground) != null ? _b : options.bodyBackground = "#ffffff !important";
-	  (_c = options.scrolling) != null ? _c : options.scrolling = false;
-	  (_d = options.inPageLinks) != null ? _d : options.inPageLinks = true;
-	  (_e = options.bodyMargin) != null ? _e : options.bodyMargin = "0";
+	  (_b = options.scrolling) != null ? _b : options.scrolling = false;
+	  (_c = options.inPageLinks) != null ? _c : options.inPageLinks = true;
+	  (_d = options.bodyMargin) != null ? _d : options.bodyMargin = "0";
 	  setTimeout(() => {
 	    iframeResizer(options, iframe);
 	  }, 100);
@@ -1604,7 +1603,7 @@
 	    });
 	  }
 	};
-	console.log(`Powered by Level Up iFrame Resizer v1.0.12:`, "https://levelupthemes.com");
+	console.log(`Powered by Level Up iFrame Resizer v1.0.13:`, "https://levelupthemes.com");
 	init();
 
 })();
