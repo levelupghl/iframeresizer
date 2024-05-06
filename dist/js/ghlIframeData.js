@@ -1,7 +1,7 @@
 /*!***************************************
  * Level Up iFrame Resizer
  * https//levelupthemes.com
- * Version: v1.0.10
+ * Version: v1.0.11
  ****************************************/
 
 (function () {

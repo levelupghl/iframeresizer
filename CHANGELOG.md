@@ -2,7 +2,17 @@
 file.
 
 ####
+[v1.0.11](https://github.com/leveluptools/iframeresizer/compare/v1.0.10...v1.0.11)
+
+-
+Set body background to white
+[`d62a5d2`](https://github.com/leveluptools/iframeresizer/commit/d62a5d2e3314808ba97c4cea9630a32740e78215)
+
+####
 [v1.0.10](https://github.com/leveluptools/iframeresizer/compare/v1.0.9...v1.0.10)
+
+>
+3 May 2024
 
 -
 Update purgeCache
