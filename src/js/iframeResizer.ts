@@ -109,8 +109,10 @@ const resizer = (options: any, elem: HTMLIFrameElement | string) => {
   // Set default options
   //
 
-  // options.bodyPadding = "0 0 50px 0"
-  // options.bodyBackground = "red"
+  // options.bodyPadding ??= "0 0 50px 0"
+
+  // Set body background color to white to avoid flash of black when notion page is loading
+  options.bodyBackground ??= "white"
 
   // Disable scrollbars in the iframe
   options.scrolling ??= false
