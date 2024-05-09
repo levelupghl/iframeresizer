@@ -33,7 +33,7 @@ function buildFiles() {
           preventAssignment: false,
           __theme_version__: `v${process.env.npm_package_version}`,
           __theme_name__: `[LOCALHOST DEV] Level Up iFrame Resizer`,
-          __theme_website__: "https://levelupthemes.com",
+          __theme_website__: "https://levelupghl.com",
         }),
         esbuild(esBuildConfig),
         serve(serveConfig),

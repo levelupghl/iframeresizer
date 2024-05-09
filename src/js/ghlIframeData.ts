@@ -6,8 +6,8 @@ function getGHLData() {
 function receiveMessage(event: MessageEvent) {
   const authorized_hosts = [
     "localhost:5173",
-    "portal.levelupthemes.com",
-    "notion-embed.levelupthemes.com",
+    "portal.levelupghl.com",
+    "funnelembedtool.levelupghl.com",
   ]
   const url = new URL(event.origin)
   // debugger
