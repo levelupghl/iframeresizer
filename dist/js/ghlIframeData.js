@@ -1,7 +1,7 @@
 /*!***************************************
  * Level Up iFrame Resizer
- * https//levelupthemes.com
- * Version: v1.0.13
+ * https//levelupghl.com
+ * Version: v1.0.14
  ****************************************/
 
 (function () {
@@ -15,8 +15,8 @@
     var _a, _b, _c;
     const authorized_hosts = [
       "localhost:5173",
-      "portal.levelupthemes.com",
-      "notion-embed.levelupthemes.com"
+      "portal.levelupghl.com",
+      "funnelembedtool.levelupghl.com"
     ];
     const url = new URL(event.origin);
     if (!event.isTrusted || !authorized_hosts.includes(url.host) || ((_a = event.data) == null ? void 0 : _a.cmd) !== "getGHLData" || !((_b = event.data) == null ? void 0 : _b.responseId)) {

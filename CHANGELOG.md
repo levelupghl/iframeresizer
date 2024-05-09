@@ -2,7 +2,17 @@
 file.
 
 ####
+[v1.0.14](https://github.com/leveluptools/iframeresizer/compare/v1.0.13...v1.0.14)
+
+-
+Migrate to levelupghl.com
+[`f0f92ed`](https://github.com/leveluptools/iframeresizer/commit/f0f92ed587b43e25e53320f21639e9ef88ade1ad)
+
+####
 [v1.0.13](https://github.com/leveluptools/iframeresizer/compare/v1.0.12...v1.0.13)
+
+>
+6 May 2024
 
 -
 Disable bodyBackground color
