@@ -24,16 +24,16 @@ async function showPurgeMessage() {
     )
   )
   log(
-    `https://cdn.jsdelivr.net/gh/leveluptools/iframeresizer@${version}/dist/js/iframeResizer.js`
+    `https://cdn.jsdelivr.net/gh/levelupghl/iframeresizer@${version}/dist/js/iframeResizer.js`
   )
   log(
-    `https://cdn.jsdelivr.net/gh/leveluptools/iframeresizer@${version}/dist/js/iframeResizer.min.js`
+    `https://cdn.jsdelivr.net/gh/levelupghl/iframeresizer@${version}/dist/js/iframeResizer.min.js`
   )
   log(
-    `https://cdn.jsdelivr.net/gh/leveluptools/iframeresizer@${version}/dist/js/ghlIframeData.js`
+    `https://cdn.jsdelivr.net/gh/levelupghl/iframeresizer@${version}/dist/js/ghlIframeData.js`
   )
   log(
-    `https://cdn.jsdelivr.net/gh/leveluptools/iframeresizer@${version}/dist/js/ghlIframeData.min.js`
+    `https://cdn.jsdelivr.net/gh/levelupghl/iframeresizer@${version}/dist/js/ghlIframeData.min.js`
   )
 
 }
